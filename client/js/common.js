@@ -103,7 +103,7 @@ const chi_so_nhan_cach = (ho_va_ten) => {
 
 //8
 const chi_so_ket_noi_nhan_cach_minus_linh_hon = (ho_va_ten) => {
-  return Math.abs(chi_so_nhan_cach(ho_va_ten) - chi_so_linh_hon(ho_va_ten));
+  return Math.abs(calcInclude112233(chi_so_nhan_cach(ho_va_ten)) - calcInclude112233(chi_so_linh_hon(ho_va_ten)));
 }
 
 //9
@@ -222,9 +222,9 @@ const chi_so_chang = (ngay_thang_nam_sinh) => {
 //17
 const chi_so_thach_thuc = (ngay_thang_nam_sinh) => {
   let ngay_thang_nam_sinh_new = splitDate(ngay_thang_nam_sinh)
-  let ngay = calcExclude112233(parseInt(ngay_thang_nam_sinh_new[0]));
-  let thang = calcExclude112233(parseInt(ngay_thang_nam_sinh_new[1]));
-  let nam = calcExclude112233(parseInt(ngay_thang_nam_sinh_new[2]));
+  let ngay = calcInclude112233(parseInt(ngay_thang_nam_sinh_new[0]));
+  let thang = calcInclude112233(parseInt(ngay_thang_nam_sinh_new[1]));
+  let nam = calcInclude112233(parseInt(ngay_thang_nam_sinh_new[2]));
   let thach_thuc_1 = calcExclude112233(Math.abs(ngay - thang));
   let thach_thuc_2 = calcExclude112233(Math.abs(ngay-nam));
   let thach_thuc_3 = calcExclude112233(Math.abs(thach_thuc_1-thach_thuc_2));
@@ -269,7 +269,7 @@ const calcNumFinal = (num) => {
 }
 
 const getFirstLetters = (ho_va_ten) => {
-  return ho_va_ten.split(" ").map(word => word.charAt(0));
+  return ho_va_ten.toUpperCase().split(" ").map(word => word.charAt(0));
 }
 
 const calcByWord = (word) => {
