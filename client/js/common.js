@@ -240,7 +240,9 @@ const calcExclude112233 = (num) => {
   if(num === 11 || num === 22 || num === 33) {
     return num;
   } else {
-    return calcNum(num);
+    if(num < 10) return num;
+    let newNum = calcNum(num);
+    return calcExclude112233(newNum);
   }
 }
 
