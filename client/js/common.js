@@ -98,7 +98,7 @@ const chi_so_ngay_sinh = (ngay_thang_nam_sinh) => {
 //7
 const chi_so_nhan_cach = (ho_va_ten) => {
   let phuAm = filterPhuAm(ho_va_ten);
-  return calcByWordFull(phuAm);
+  return calcByWord(phuAm);
 }
 
 //8
